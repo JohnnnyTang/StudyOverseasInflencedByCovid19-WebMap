@@ -11,6 +11,6 @@ Made up of 6 students of NNU.
 Two of them are responsible for the web-map devlopment.
 .....
 
-####
+#### Others
 GitHub Pages service is on.
 Visit this web-map on https://johnnnytang.github.io/StudyOverseasInflencedByCovid19-WebMap
