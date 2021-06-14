@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+
+.other-section {
+    background-color: #eee;
+    height: 3000px;
+}
+
+.description {
+    width: 600px;
+    height: 400px;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    text-align: center;
+    color: rgba(32, 32, 32, 0.9);
+    margin: 0 auto 120vh;
+}
+
+.description h3 {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: yellow;
+    margin-top: 0;
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.description p {
+    font-size: 18px;
+    margin: 5% 0 0;
+}
+
+.description[textonly] {
+    width: 500px;
+    height: 400px;
+}
+
+.description[id="two-down"] {
+    margin: 0 auto 360vh;
+}
+
+.description[id="three-down"] {
+    margin: 0 auto 600vh;
+    
+}
+
+.text {
+    margin-top: 5%;
+    float: left;
+    width: 48%;
+    height: 80%;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: blue;
+    overflow: hidden;
+}
+
+.graph {
+    margin-top: 5%;
+    float: right;
+    width: 50%;
+    height: 80%;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: red;
+}
+
+.textonly {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: blue;
+    height: 75%;
+}
+
+.map-container {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}
+
+.description-container {
+    padding-bottom: 100vh;
+}
+
+.description:last-child {
+    margin-bottom: 0;
+}
