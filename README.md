@@ -10,3 +10,7 @@ A web-map showing the Covid-19's influence on studying abroad
 Made up of 6 students of NNU.
 Two of them are responsible for the web-map devlopment.
 .....
+
+####
+GitHub Pages service is on.
+Visit this web-map on https://johnnnytang.github.io/StudyOverseasInflencedByCovid19-WebMap
