@@ -58,7 +58,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-USA-totalStudent-point-19to20-ave'],
-    label:'UK-USA-totalStudent-label-19to20-ave'
+    label:'UK-USA-totalStudent-label-19to20-ave', 
+    flySet: {
+      zoom:2.22,
+      center: [-53.970708, 40.612189], 
+      speed: 0.4
+    }
   }, 
   // 英国
   {
@@ -94,7 +99,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-top30-originCountry-polygon-19to20-ave'],
-    label:'UK-top30-originCountry-label-19to20-ave'
+    label:'UK-top30-originCountry-label-19to20-ave', 
+    flySet: {
+      zoom: 1.45, 
+      center: [158.106237, 55.981167], 
+      speed: 0.4
+    }
   }, 
   // 美国
   {
@@ -112,7 +122,12 @@ const layerControl = [
   }, 
   {
     layers:['USA-top20-university-point-19to20-ave'],
-    label:'USA-top20-university-label-19to20-ave'
+    label:'USA-top20-university-label-19to20-ave', 
+    flySet: {
+      zoom: 3.76, 
+      center: [-96.817282, 39.632594], 
+      speed: 0.2
+    }
   }, 
   // 全球-美国
   {
@@ -130,7 +145,12 @@ const layerControl = [
   }, 
   {
     layers:['USA-top30-originCountry-polygon-19to20-ave'],
-    label:'USA-top30-originCountry-label-19to20-ave'
+    label:'USA-top30-originCountry-label-19to20-ave', 
+    flySet: {
+      zoom: 1.48, 
+      center: [151.942,24.639], 
+      speed: 0.3
+    }
   }
 ];
 
