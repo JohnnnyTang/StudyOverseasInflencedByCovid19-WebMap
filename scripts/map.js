@@ -81,7 +81,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-top20-university-point-19to20-ave'],
-    label:'UK-top20-university-label-19to20-ave'
+    label:'UK-top20-university-label-19to20-ave', 
+    flySet: {
+      zoom: 4.91, 
+      center: [-3.690025, 54.573658], 
+      speed: 0.2
+    }
   }, 
   // 全球-英国
   {
