@@ -22,9 +22,6 @@ body {
 }
 
 .description h3 {
-    border-style: dotted;
-    border-width: 2px;
-    border-color: yellow;
     margin-top: 0;
     font-size: 28px;
     margin: 0;
@@ -33,21 +30,25 @@ body {
 
 .description p {
     font-size: 18px;
-    margin: 5% 0 0;
+    margin: 3% 0 0;
+}
+
+p.text-only {
+    font-size: 28px;
+    margin: 15% 0 0;
 }
 
 .description[textonly] {
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 150px;
 }
 
-.description[id="two-down"] {
-    margin: 0 auto 360vh;
+.description[id="one-down"] {
+    margin: 0 auto 120vh;
 }
 
 .description[id="three-down"] {
     margin: 0 auto 600vh;
-    
 }
 
 .text {
@@ -55,9 +56,6 @@ body {
     float: left;
     width: 48%;
     height: 80%;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: blue;
     overflow: hidden;
 }
 
@@ -66,16 +64,6 @@ body {
     float: right;
     width: 50%;
     height: 80%;
-    border-style: dotted;
-    border-width: 2px;
-    border-color: red;
-}
-
-.textonly {
-    border-style: dotted;
-    border-width: 2px;
-    border-color: blue;
-    height: 75%;
 }
 
 .map-container {
@@ -88,8 +76,4 @@ body {
 
 .description-container {
     padding-bottom: 100vh;
-}
-
-.description:last-child {
-    margin-bottom: 0;
 }

@@ -1,0 +1,15 @@
+.UK-main{
+    height: 100vh;
+    
+}
+
+.USA-main{
+    height: 100vh;
+}
+
+.title{
+    text-align: center;
+    position: relative;
+    top: 10px;
+
+}
