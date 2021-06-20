@@ -1,12 +1,14 @@
 import Utils from './utils.js';
+import Legend from './legend.js';
+import Charts from './charts.js';
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obm55dCIsImEiOiJja2xxNXplNjYwNnhzMm5uYTJtdHVlbTByIn0.f1GfZbFLWjiEayI6hb_Qvg';
-let map = new mapboxgl.Map({
-    container: 'map', 
-    style: 'mapbox://styles/johnnyt/ckptq39or21yj18o7zff9pkd8', 
-    zoom: 1.48, 
+mapboxgl.accessToken='pk.eyJ1IjoiYW5hdG9taWNhbCIsImEiOiJja2x0MjBjc3Ywam0zMm9sZGlyNnY2OHB1In0.H73LoepKneV7RXuE5j69LA';
+var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/anatomical/ckpnpei390krw17pexz56aip6', // style URL
     center: [151.942,19.639], 
-    localIdeographFontFamily: "'YRDZST', sans-serif"
+    zoom: 1.48, 
+    localIdeographFontFamily: "'YRDZST', sans-serif"//引用本地导入字体
 });
 
 // 全局定量
@@ -17,14 +19,17 @@ const sectionHeight = mapSection.getBoundingClientRect().height;
 const html = document.documentElement;
 
 let aUtil = new Utils(map); // 构建帮助类
+let aLegend = new Legend(map); // 图例类
+let aChart = new Charts(html.getElementsByClassName("graph"));
+//console.log(html.getElementsByClassName("graph"));
 
 const scrollRange = [
-  0, 0.056, 0.1081, 
-  0.149 , 0.2135, 0.2789, 
-  0.32, 0.3843, 0.4491, 
-  0.492, 0.5551, 0.6191, 
-  0.66, 0.72435, 0.7896, 
-  0.84, 0.8955, 0.96, 
+  0, 0.043, 0.0815, 
+  0.1275 , 0.184, 0.2405, 
+  0.297, 0.3533, 0.4096, 
+  0.466, 0.522, 0.578, 
+  0.634, 0.6903, 0.7466, 
+  0.803, 0.872, 0.941, 
   1.01
 ];
 
@@ -44,11 +49,27 @@ const layerControl = [
     flySet: {
       zoom:2.22,
       center: [-53.970708, 40.612189], 
-      speed: 0.2
+      speed: 0.4
     }
-  }, {
+  }, 
+  // top10国家
+  {
+    layers:['studyAbroad_top10_line', 'studyAbroad_top10_polygon'],
+    label:'studyAbroad_top10_label', 
+    flySet: {
+      zoom:1.34,
+      center: [-205.498270, 40.224331], 
+      speed: 0.4
+    }
+  }, 
+  {
     layers:['UK-USA-totalStudent-point-19to20'],
-    label:'UK-USA-totalStudent-label-19to20'
+    label:'UK-USA-totalStudent-label-19to20', 
+    flySet: {
+      zoom:2.22,
+      center: [-53.970708, 40.612189], 
+      speed: 0.4
+    }
   }, 
   {
     layers:['UK-USA-totalStudent-point-ave'],
@@ -56,7 +77,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-USA-totalStudent-point-19to20-ave'],
-    label:'UK-USA-totalStudent-label-19to20-ave'
+    label:'UK-USA-totalStudent-label-19to20-ave', 
+    flySet: {
+      zoom:2.22,
+      center: [-53.970708, 40.612189], 
+      speed: 0.4
+    }
   }, 
   // 英国
   {
@@ -74,7 +100,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-top20-university-point-19to20-ave'],
-    label:'UK-top20-university-label-19to20-ave'
+    label:'UK-top20-university-label-19to20-ave', 
+    flySet: {
+      zoom: 4.91, 
+      center: [-3.690025, 54.573658], 
+      speed: 0.2
+    }
   }, 
   // 全球-英国
   {
@@ -92,7 +123,12 @@ const layerControl = [
   }, 
   {
     layers:['UK-top30-originCountry-polygon-19to20-ave'],
-    label:'UK-top30-originCountry-label-19to20-ave'
+    label:'UK-top30-originCountry-label-19to20-ave', 
+    flySet: {
+      zoom: 1.45, 
+      center: [158.106237, 55.981167], 
+      speed: 0.4
+    }
   }, 
   // 美国
   {
@@ -108,10 +144,15 @@ const layerControl = [
     layers:['USA-top20-university-point-ave'],
     label:'USA-top20-university-label-19to20-or-ave'
   }, 
-  // {
-  //   layers:['USA-top20-university-point-19to20-avg'],
-  //   label:'USA-top20-university-label-19to20-ave'
-  // }, 
+  {
+    layers:['USA-top20-university-point-19to20-ave'],
+    label:'USA-top20-university-label-19to20-ave', 
+    flySet: {
+      zoom: 3.76, 
+      center: [-96.817282, 39.632594], 
+      speed: 0.2
+    }
+  }, 
   // 全球-美国
   {
     layers:['USA-top30-originCountry-polygon-19to20'],
@@ -128,7 +169,12 @@ const layerControl = [
   }, 
   {
     layers:['USA-top30-originCountry-polygon-19to20-ave'],
-    label:'USA-top30-originCountry-label-19to20-ave'
+    label:'USA-top30-originCountry-label-19to20-ave', 
+    flySet: {
+      zoom: 1.48, 
+      center: [151.942,24.639], 
+      speed: 0.3
+    }
   }
 ];
 
@@ -138,23 +184,34 @@ map.on('load', function() {
 
   let scrollRegion = 1;
 
-  console.log(map.getLayer('USA-top20-university-point-19to20-avg')); // 此图层有问题
+  aLegend.getLegend(['COVID-19-globle-polygon']);
+  //console.log(aUtil.GetLayerMaxOpacity('COVID-19-globle-polygon'));
 
   document.addEventListener('scroll', (e) => {
 
     let scrolled = html.scrollTop / (sectionHeight - html.clientHeight);
-    //console.log(`scrolled: ${scrolled}`);
+    console.log(`scrolled: ${scrolled}`);
 
-    let curRegion = JudgeScrollRegion(scrolled, scrollRegion);
-    if(curRegion != scrollRegion) {
-      let activeLayers = ChapterChange(curRegion, activeLayerID, activeLabelID);
-      activeLayerID = activeLayers[0];
-      activeLabelID = activeLayers[1];
-      scrollRegion = curRegion;
+    if(scrolled <= 1) {
+      let curRegion = JudgeScrollRegion(scrolled, scrollRegion);
+      if(curRegion != scrollRegion) {
+        let activeLayers = ChapterChange(curRegion, activeLayerID, activeLabelID);
+        activeLayerID = activeLayers[0];
+        activeLabelID = activeLayers[1];
+        scrollRegion = curRegion;
+      }
+      if(scrollRegion == 1) {
+        aChart.SetProperChart(0);
+      }
+      else if(scrollRegion == 3) {
+        aChart.SetProperChart(1);
+      }
+      else if(scrollRegion > 3){
+        aChart.SetProperChart(Math.ceil(scrollRegion/3));
+      }
+
+      ChapterScroll(scrollRange[scrollRegion-1], scrollRange[scrollRegion], scrolled, activeLayerID, activeLabelID);
     }
-
-    ChapterScroll(scrollRange[scrollRegion-1], scrollRange[scrollRegion], scrolled, activeLayerID, activeLabelID);
-
   });
 });
 
@@ -195,17 +252,18 @@ function ChapterChange(chapterID, activeLayerID, activeLabelID) {
     aUtil.LabelInvisible(activeLabelID);
   }
   
-  aUtil.InitLayers(layerControl[chapterID-1].layers);
-
   let rst = [layerControl[chapterID-1].layers, ''];
+
+  if(layerControl[chapterID-1].hasOwnProperty("flySet")) {
+    map.flyTo(layerControl[chapterID-1].flySet);
+  }
+
+  aUtil.InitLayers(layerControl[chapterID-1].layers);
+  aLegend.getLegend(layerControl[chapterID-1].layers);
 
   if(layerControl[chapterID-1].hasOwnProperty("label")) {
     aUtil.InitLabel(layerControl[chapterID-1].label);
     rst[1] = layerControl[chapterID-1].label;
-  }
-
-  if(layerControl[chapterID-1].hasOwnProperty("flySet")) {
-    map.flyTo(layerControl[chapterID-1].flySet);
   }
   return rst;
 }
