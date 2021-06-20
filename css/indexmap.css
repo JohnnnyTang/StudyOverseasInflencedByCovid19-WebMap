@@ -5,8 +5,8 @@ body {
 }
 
 .other-section {
-    background-color: #eee;
-    height: 3000px;
+    background-color: rgba(34, 34, 34, 0.8);
+    height: 800px;
 }
 
 .description {
