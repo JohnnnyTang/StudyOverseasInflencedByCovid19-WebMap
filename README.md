@@ -13,8 +13,5 @@ Two of them are responsible for the web-map devlopment.
 
 #### Others
 GitHub Pages service is on.
-<<<<<<< HEAD
 Visit this web-map on https://johnnnytang.github.io/StudyOverseasInflencedByCovid19-WebMap
-=======
-Visit this web-map on https://johnnnytang.github.io/StudyOverseasInflencedByCovid19-WebMap
->>>>>>> 08ec5f13bd952161f5d6a06397fd540506775f6a
+
