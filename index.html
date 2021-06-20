@@ -7,74 +7,354 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" type="text/css" href="./css/indexmap.css">
     <link rel="stylesheet" type="text/css" href="./css/legend.css">
+    <link rel="stylesheet" type="text/css" href="./css/otherSection.css">
 	<link rel="icon" href="https://z3.ax1x.com/2021/06/14/27DLl9.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
 </head>
 <body>
     <section class="map-section">
-        <div class="map-container" id="map"></div>
-        <div class="map-overlay" id="legend"></div>
+        <div class="map-container" id="map">
+            <div class="map-overlay" id="legend"></div>
+            <div class="map-overlay" id="title"></div>
+        </div>
+        
         <div class="description-container">
-            <div class="description" textgraph id="two-down">
-                <h3>Deep bass with range you can feel.</h3>
+            <div class="description" textgraph id="one-down"><!--世界疫情-->
+                <h3>疫情概览</h3>
                 <div class="text">
-                    <p>The Apple-designed high-excursion woofer is positioned at the top of the speaker facing upward, creating a wide range of deep bass that surpasses any traditional speaker. A six-microphone array, along with an internal bass-EQ microphone, analyzes and compensates for the effect of the room on the bass response, providing rich, consistent sound. And a powerful motor drives the diaphragm a remarkable 20 mm, so the bass shines through even when the volume is low.</p>
+                    <p>自从2019年新冠疫情爆发以来，尽管已有少数国家控制疫情蔓延，新冠疫情仍严重威胁人类的生命安全。截止2021年6月，全球疫情累计确诊数量惊人，并进一步程蔓延趋势。</p>
                 </div>
                 <div class="graph">
-                    <p>Graph Content</p>
-                </div>
-            </div>
-      
-            <div class="description" textonly id="three-down">
-                <h3>Far and away an incredible listener.</h3>
-                <p class="textonly">Six microphones positioned around HomePod allow it to pick up all the sound in a room. When you say “Hey Siri,” advanced signal processing, together with echo and noise cancellation, allows HomePod to hear you without the need to raise your voice — even if you’re across the room with loud music playing. After HomePod recognizes the words “Hey Siri,” what you say is encrypted and sent anonymously to Apple servers without being tied to your Apple ID.</p>
-            </div>
-      
-            <div class="description" textgraph id="three-down">
-                <h3>Deep bass with range you can feel.</h3>
-                <div class="text">
-                    <p>The Apple-designed high-excursion woofer is positioned at the top of the speaker facing upward, creating a wide range of deep bass that surpasses any traditional speaker. A six-microphone array, along with an internal bass-EQ microphone, analyzes and compensates for the effect of the room on the bass response, providing rich, consistent sound. And a powerful motor drives the diaphragm a remarkable 20 mm, so the bass shines through even when the volume is low.</p>
-                </div>
-                <div class="graph">
-                    <p>Graph Content</p>
-                </div>
-            </div>
-      
-            <div class="description" textonly id="three-down">
-                <h3>Far and away an incredible listener.</h3>
-                <p class="textonly">Six microphones positioned around HomePod allow it to pick up all the sound in a room. When you say “Hey Siri,” advanced signal processing, together with echo and noise cancellation, allows HomePod to hear you without the need to raise your voice — even if you’re across the room with loud music playing. After HomePod recognizes the words “Hey Siri,” what you say is encrypted and sent anonymously to Apple servers without being tied to your Apple ID.</p>
-            </div>
-      
-            <div class="description" textgraph id="three-down">
-                <h3>Deep bass with range you can feel.</h3>
-                <div class="text">
-                    <p>The Apple-designed high-excursion woofer is positioned at the top of the speaker facing upward, creating a wide range of deep bass that surpasses any traditional speaker. A six-microphone array, along with an internal bass-EQ microphone, analyzes and compensates for the effect of the room on the bass response, providing rich, consistent sound. And a powerful motor drives the diaphragm a remarkable 20 mm, so the bass shines through even when the volume is low.</p>
-                </div>
-                <div class="graph">
-                    <p>Graph Content</p>
                 </div>
             </div>
 
-            <div class="description" textonly id="three-down">
-                <h3>Far and away an incredible listener.</h3>
-                <p class="textonly">Six microphones positioned around HomePod allow it to pick up all the sound in a room. When you say “Hey Siri,” advanced signal processing, together with echo and noise cancellation, allows HomePod to hear you without the need to raise your voice — even if you’re across the room with loud music playing. After HomePod recognizes the words “Hey Siri,” what you say is encrypted and sent anonymously to Apple servers without being tied to your Apple ID.</p>
+            <div class="description" textonly id="one-down"><!--英美疫情-->
+                <h3>英美国家的疫情情况</h3>
+                <p class="textonly">聚焦英美，英国疫情爆发情况较为密集，而美国则出现爆发数量多、范围广的现象。</p>
             </div>
 
-            <div class="description" textgraph id="three-down">
-                <h3>Deep bass with range you can feel.</h3>
+            <div class="description" textgraph id="one-down"><!--留学十大国-->
+                <h3>世界留学十大国</h3>
                 <div class="text">
-                    <p>The Apple-designed high-excursion woofer is positioned at the top of the speaker facing upward, creating a wide range of deep bass that surpasses any traditional speaker. A six-microphone array, along with an internal bass-EQ microphone, analyzes and compensates for the effect of the room on the bass response, providing rich, consistent sound. And a powerful motor drives the diaphragm a remarkable 20 mm, so the bass shines through even when the volume is low.</p>
+                    <p>根据全球教育网发布的最佳留学国得分，加拿大、澳大利亚、德国、瑞士、美国、瑞典、荷兰、英国等国名列前茅。其中，英国和美国恰为受疫情影响较为严重的国家。那么在这场突如其来的疫情中，英美这两个留学大国的留学生数量会有怎样的变化呢？</p>
                 </div>
                 <div class="graph">
-                    <p>Graph Content</p>
+                </div>
+            </div>
+            
+            <div class="description" textgraph id="three-down"><!--英美新入学-->
+                <h3>英美留学人数</h3>
+                <div class="text">
+                    <p>在新冠疫情影响下，19年至20年赴英美留学的人数受到影响，但英国较美国接收更多留学生。参照前五年新入学平均人数，英国平均较美国接收更多留学生。在疫情爆发后，选择前往英国的留学生较往年平均增长，且增长幅度较大，选择前往美国的留学生较往年平均减少，且减少幅度较大。</p>
+                </div>
+                <div class="graph">
+                </div>
+            </div>
+      
+            <div class="description" textgraph id="three-down"><!--英top20-->
+                <h3>英国19-20学年大学留学生人数变化前20</h3>
+                <div class="text">
+                    <p>英国19-20学年留学生人数排名前20的高校包括南安普顿大学、曼彻斯特大学、爱丁堡大学等20所高校。求取TOP20各高校近5年来平均留学生人数，将英国各高校19-20学年留学生人数与其近5年平均留学生人数作差。其中伦敦都市大学、纽卡斯尔大学以及利兹大学等变化最为明显。</p>
+                </div>
+                <div class="graph">
+                </div>
+            </div>
+      
+            <div class="description" textgraph id="three-down"><!--英top30-->
+                <h3>按生源国分类英国19-20学年留学生人数top30国家变化率情况</h3>
+                <div class="text">
+                    <p>按生源国分类，英国19-20学年留学生人数前30的国家包括印度、巴基斯坦以及尼日利亚等30个国家。按照生源国分类，求取TOP30国家近五年来往英国留学人数平均变化率。将TOP30各国家19-20学年往英国留学人数变化率与近5年平均变化率作差。其中印度、尼日利亚、及孟加拉国等变化最为明显。</p>
+                </div>
+                <div class="graph">
+                </div>
+            </div>
+
+            <div class="description" textgraph id="three-down"><!--美top20-->
+                <h3>美国19-20学年top20大学留学生人数变化情况</h3>
+                <div class="text">
+                    <p>19-20学年美国留学人数最多的大学主要有纽约大学、波士顿大学、加利福尼亚大学等20所大学。通过将美国各高校19-20学年留学生人数与其近5年平均留学生人数作差。数据显示，人数减少的学校大多是中等院校，而热门院校并没有受到多大的影响。</p>
+                </div>
+                <div class="graph">
+                </div>
+            </div>
+
+            <div class="description" textgraph id="three-down"><!--美top30-->
+                <h3>按生源国分类美国19-20学年留学生人数top30国家变化率情况</h3>
+                <div class="text">
+                    <p>19-20学年，在美国留学生主要生源国中，巴西、印度等国以外其他国家人数变化率率几乎为0。而在前五年内，除沙特阿拉伯等极少数国家外，其余各国人数都在逐步上涨。说明在疫情影响下各个国家赴美留学的意愿均受到一定的打击，其中以印度为代表受影响程度最大。</p>
+                </div>
+                <div class="graph">
                 </div>
             </div>
         </div>
     </section>
-    <!-- other-section 给其它说明预留 -->
     <section class="other-section">
-        <h2>网页其他部分预留</h2>
-        <p>.......</p>
+        <div id="UK-main" class="UK-main">
+            <div class="layui-carousel" id="UK">
+                <div carousel-item>
+                    <div>
+                        <div style="position: relative;width: 65%;float: left;">
+                            <div class="title">
+                                <h1>英国19-20学年留学生人数变化情况之剖析</h1>
+                            </div>
+
+                            <div
+                                style="position:relative;left:calc(50% - 150px);top:30px;width: 300px;border: 2px solid;">
+                                尽管受全球疫情影响，英国疫情下的留学“热”仍显较为显著。
+                                19-20学年英国留学生TOP20高校有17所高校保持明显增加趋势。
+                                以背后原因包括学术优势、地理位置、世界排名等等方面，
+                                以南安普顿大学和爱丁堡大学为例：</div>
+                            <div style="position: relative;left: calc(50% - 400px);top: 50px;">
+                                <img src="./image/1.png" style="width: 400px;height: 200px;">
+                                <img src="./image/2.png" style="position:relative;left:0px;width: 400px;height: 200px;">
+                                <div
+                                    style="width: 440px;position: relative;left: calc(50% - 300px);top: 20px;border: 2px solid;">
+                                    南安普敦大学是全英十大科研大学之一。
+                                    在最新发布的2014年英国国家科研水平评估(RAE)中，南安普顿大学位居全英第8位。
+                                    爱丁堡大学地理位置，位于苏格兰首府爱丁堡市中心。
+                                    在18世纪欧洲启蒙运动的浪潮中，爱丁堡大学逐渐成为欧洲的学术中心。
+                                    因此，爱丁堡也有“北方雅典”的美誉。
+                                </div>
+                                <div
+                                    style="position: relative;width: 440px ;top: 50px;left: calc(50% - 300px);border: 2px solid;">
+                                    对比分析英国留学生人数TOP20高校留学生人数变化分析，纽卡斯尔大学留学生人数增加最多，达到4473人。
+                                    英国纽卡斯尔大学位于泰恩河下游北岸的纽卡斯尔市市中心，东距北海13公里，是泰恩威尔郡的首府。
+                                    地理位置及学术声誉是其获得国外留学生青睐的主要原因。
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative;width: 35%;float: left;">
+                            <div class="title">
+                                <h1>按生源国分类英国19-20学年留学生人数前30国家变化率情况之剖析</h1>
+                            </div>
+                            <div
+                                style="position: relative;width: 400px;top: 100px;left: calc(50% - 200px);border: 2px solid;">
+                                对比分析英国留学生按国家生源地分布，其生源主要来自亚洲，欧洲和北美次之。
+                                在全球疫情影响下，印度往英国留学人数保持增多，其原因包含印度和英国之间没有禁航。
+                                现在仍有航班从印度飞往英国，包括直航和转机。
+                                虽然英国于4月23日就将印度加入旅行限制“红色名单”，
+                                但这项限制仅仅禁止了一部分印度人入境英国，航班仍然不会停飞。
+                                同时，来自印度的留学生，只要持学生签证，仍然可以正常进入英国。
+                                反观意大利，往英国留学人数在19-20学年减少最多，其主要受意大利国内疫情肆掠、持续增高影响严重。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="title">
+                            <h1>英国留学在全球疫情影响下能持续发热</h1>
+                        </div>
+                        <div style="position: relative;width: 33%;height: 60%;float: left;top: 30px;">
+                            <h2 style="text-align: center;align-items: center;">“英国脱欧”对留学英国的影响</h2>
+                            <div>
+                                <img src="./image/3.png"
+                                    style="width: 300px;height: 200px;position: relative;left: calc(50% - 150px);top: 20px;">
+                            </div>
+                            <div style="position: relative;left: calc(50% - 150px);top: 30px;">
+                                <p>1.留英学费的变化。</p>
+                                <p>2.在英生活费用的变化。</p>
+                                <p>3.英国脱欧致使赴英留学成本降低。</p>
+                                <p>4.英国高校招生可能更为严格。</p>
+                                <p>5.英国脱欧使中国留学生毕业留英工作环境变好。</p>
+                                <p>6.英国脱欧导致留学生选择其他国家。</p>
+                            </div>
+                        </div>
+                        <div style="position: relative;width:33%;height: 60%;float: left;top: 30px;">
+                            <h2 style="text-align: center;">政府作用对留学英国的影响</h2>
+                            <div>
+                                <img src="./image/5.png"
+                                    style="position: relative;width: 300px;height: 200px;left: calc(50% - 150px);top: 20px;">
+                            </div>
+                            <div style="position: relative;width: 300px;left: calc(50% - 150px);top: 30px;">
+                                对于个别中国留学生遭遇的歧视和骚扰事件，
+                                英国大学联盟和英国国际学生事务委员会在官网上用中文发布了联合声明，
+                                表示英国大学一直秉承延续对中国留学生友好亲善的历史，
+                                英国大学不会接受容忍任何形式上的种族主义的歧视和偏见。
+                            </div>
+                        </div>
+                        <div style="position: relative;width:33%;height: 60%;float: left;top: 30px;">
+                            <h2 style="text-align: center;">学费对留学英国的影响</h2>
+                            <div>
+                                <img src="./image/4.png"
+                                    style="position: relative;width: 300px;height: 200px;left: calc(50% - 150px);top: 20px;">
+                            </div>
+                            <div style="position: relative;width: 300px;left: calc(50% - 150px);top: 30px;">
+                                在任的大学部内阁大臣Michelle Donelan宣布，尽管大学课程会转移为线上模式教授，
+                                英国就读的大学生仍需支付全额学费。
+                                并表示如果学校能够保证教学质量，不认为学生有权申请学费减免。
+                            </div>
+                        </div>
+
+                        <div
+                            style="position: relative;width: calc(50% - 200px);float: left;height: 40%;top: 40px;left: 200px;">
+                            <h2 style="text-align: center;">英国的政策支撑对留学英国的影响</h2>
+                            <div style="position: relative;width: 400px;top:10px ;left: calc(50% - 200px);">
+                                英国政府和相关部门为协助减轻新冠肺炎疫情影响采取了一系列措施，
+                                包括稳定招生局面针对今年的特殊情况采取的临时措施使英国高等院校
+                                能够在其下一学年预计本土招生人数的基础上多招收5%的学生
+                                以及阻止剥削性的招生行为英国学生办公室（OfficeforStudents，OfS）将讨论新的临时入学登记条款，
+                                以便在高等教育机构对业界和申请者做出有害行为时进行干预等等。
+                            </div>
+                        </div>
+                        <div
+                            style="position: relative;width: calc(50% - 200px);float: left;height: 40%;top: 40px;left: 200px;">
+                            <h2 style="text-align: center;">英国各高校对疫情的准备对留学英国的影响</h2>
+                            <div style="position: relative;width: 400px;top:10px ;left: calc(50% - 200px);">
+                                在全球疫情下，对是否做好了应对疫情对教育影响的准备，
+                                英国各高校明显存在差距。同时疫情应对状况对国际生的招生也会产生影响。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="USA-main" class="USA-main">
+            <div class="layui-carousel" id="USA">
+                <div carousel-item>
+                    <div>
+                        <div style="position: relative;width: 35%;float: left;">
+                            <div class="title">
+                                <h1>美国留学生人数情况总览</h1>
+                            </div>
+
+                            <div
+                                style="position:relative;left:calc(50% - 150px);top:30px;width: 300px;border: 2px solid;">
+                                在疫情影响下，出国人数大大降低，美国甚至对中国颁布的禁飞令，
+                                再加上特朗普的关于移民留学的部分政策的调整更新，使得前往美国留学的成本大大增加，
+                                而且所需要耗费的时间，精力大幅提高，这也就导致越来越多的人放弃前往美国留学，转而前往英国留学。
+                            </div>
+                            <div
+                                style="position:relative;left:calc(50% - 150px);top:50px;width: 300px;border: 2px solid;">
+                                然而在这样的大背景下，虽然大多数学校接受的留学生人数不断减少，但是仍有一些学校出现反常的情况。
+                            </div>
+                        </div>
+                        <div style="position: relative;width: 65%;float: left;">
+                            <div class="title">
+                                <h1>美国部分学校出现反常情况原因剖析</h1>
+                            </div>
+                            <div
+                                style="position:relative;left:calc(50% - 300px);top:30px;width: 600px;border: 2px solid;">
+                                康内尔学校增加人数最多达到6180人，究其原因，康奈尔大学的立校之本是任何人都有获得教育的平等权利，
+                                是常春藤盟校中第一所实行性别平等的男女合校大学，在招生录取上最早实行不计贵族身份，不分信仰和种族，
+                                并以创建学科齐全、包罗万象的新型综合性大学为建校宗旨。2018世界大学学术排名全球第12，
+                                2019莫斯科国际大学排名全球第14。由此可见在学校本身学术水平足够的情况下，
+                                受美国政策的影响以及美国本土存在的种族歧视身份阶级的因素，作为一所包罗万象的大学，
+                                其更加受到学生的欢迎，也就导致在这一学年其他学校留学生人数下降的情况下，
+                                康奈尔大学的留学生人数不降反升，甚至人数增加量跃居第一。
+                            </div>
+                            <div style="position: relative;left: calc(50% - 400px);top: 50px;">
+                                <img src="./image/6.png" style="width: 400px;height: 300px;">
+                                <img src="./image/7.png" style="position:relative;left:0px;width: 400px;height: 300px;">
+                                <div
+                                    style="width: 800px;position: relative;left: calc(50% - 480px);top: 20px;border: 2px solid;">
+                                    此外人数增加的其他几个大学如纽约大学，加利福尼亚大学，
+                                    其中纽约大学是一所位于美国纽约市的世界顶尖私立研究型大学，
+                                    全美办学规模最大的私立名校之一，该校系美国大学协会成员，被誉为新常春藤，
+                                    在2019年QS毕业生就业能力排名世界第11位。
+                                    加利福尼亚大学是位于美国加利福尼亚州的一个由10所公立大学组成的大学行政系统，
+                                    是世界上最具影响力的公立大学系统，被誉为“公立高等教育的典范”。
+                                    由此，这类院校人数不降反增的主要原因还是因为其学院本身的实力过硬，
+                                    而外部环境的干扰并没有盖过前往这类院校留学的心，
+                                    因此这一类的院校受疫情或者政策环境的影响也相对较少。
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div>
+                        <div style="position: relative;width: 50%;float: left;">
+                            <div class="title">
+                                <h1>从全球视角上看美国留学人数之变</h1>
+                            </div>
+
+                            <div
+                                style="position:relative;left:calc(50% - 300px);top:30px;width: 600px;border: 2px solid;">
+                                从国家角度来看，美国留学生生源在全球普遍下降，这与美国新出台的政策密不可分，
+                                同时也因为美国对于其他国家的态度越来越恶劣。
+                                从特朗普上任开始，就在为美国树立越来越多的“敌人”，在当今世界经济全球化的情况下，
+                                各国都是在努力的和其他国家加强合作，在贸易上拉拢更多的合作伙伴，不过，美国却一直反其道而行，
+                                与全世界“为敌”！先后得罪了委内瑞拉、伊朗、中国、欧盟、日本、韩国、加拿大、墨西哥等一众国家，
+                                连曾经最好的盟友国都没放过。
+                            </div>
+                            <div style="position: relative;left: calc(50% - 300px);top: 50px;">
+                                <img src="./image/8.png" style="width: 300px;height: 200px;">
+                                <img src="./image/9.png" style="position:relative;left:0px;width: 300px;height: 200px;">
+                                <div
+                                    style="width: 400px;position: relative;left: calc(50% - 300px);top: 20px;border: 2px solid;">
+                                    在这样的多重影响下，美国留学生人数日益下降，除少数几个国家外，在全球疫情的席卷下，各国人数变化率都在下跌。
+                                </div>
+                                <div
+                                    style="width: 400px;position: relative;left: calc(50% - 300px);top: 50px;border: 2px solid;">
+                                    其中代表的就是印度，随着美印两国的关系持续升温，两国在政治、经贸、军事等领域的合作不断深入，
+                                    并有意识地加强在非军事用途核能合作领域的对话，美印两国还发表了联合声明，
+                                    承诺在经贸、农业、能源、科技和国际事务等领域开展合作。
+                                    美国在联合声明中还承诺向印度空间研究组织出口微型合成孔径雷达和月球矿物制图仪，
+                                    用于印度即将实施的“月球-Ⅰ号”探月计划。由此可见印度的人数增加也就不足为奇。
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style="position: relative;width: 50%;float: left;">
+                            <div class="title">
+                                <h1>美国政策对留学生的影响</h1>
+                            </div>
+                            <div
+                                style="position:relative;left:calc(50% - 300px);top:30px;width: 600px;border: 2px solid;">
+                                康内尔学校增加人数最多达到6180人，究其原因，康奈尔大学的立校之本是任何人都有获得教育的平等权利，
+                                是常春藤盟校中第一所实行性别平等的男女合校大学，在招生录取上最早实行不计贵族身份，不分信仰和种族，
+                                并以创建学科齐全、包罗万象的新型综合性大学为建校宗旨。2018世界大学学术排名全球第12，
+                                2019莫斯科国际大学排名全球第14。由此可见在学校本身学术水平足够的情况下，
+                                受美国政策的影响以及美国本土存在的种族歧视身份阶级的因素，作为一所包罗万象的大学，
+                                其更加受到学生的欢迎，也就导致在这一学年其他学校留学生人数下降的情况下，
+                                康奈尔大学的留学生人数不降反升，甚至人数增加量跃居第一。
+                            </div>
+                            <div style="position: relative;left: calc(50% - 400px);top: 50px;">
+                                <img src="./image/10.png"
+                                    style="position:relative;left:calc(50% - 200px);width: 400px;height: 300px;">
+                                <div
+                                    style="width: 600px;position: relative;left: calc(50% - 280px);top: 20px;border: 2px solid;">
+                                    美国的这一系列政策的出台，大大加大了留学生获取签证的难度，也加大了留学生的经济压力，
+                                    再加上美国国内仍存在的种族歧视，最终导致越来越多的人将美国从自己的留学计划中剔除。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 </body>
+<script type="module" src="scripts/echarts.min.js"></script>
 <script type="module" src="scripts/map.js"></script>
+<script src="./layui/layui.js"></script>
+<script>
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#UK',
+            width: '100%', //设置容器宽度
+            height: '90%',
+            arrow: 'hover', //始终显示箭头
+            autoplay: false,
+            indicator: "none",
+
+        });
+        carousel.render({
+            elem: '#USA',
+            width: '100%', //设置容器宽度
+            height: '90%',
+            arrow: 'hover', //始终显示箭头
+            autoplay: false,
+            indicator: "none"
+
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+</script>
 </html>
