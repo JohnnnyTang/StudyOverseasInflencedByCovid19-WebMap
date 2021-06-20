@@ -1,5 +1,6 @@
 import Utils from './utils.js';
 import Legend from './legend.js';
+import Charts from './charts.js';
 
 mapboxgl.accessToken='pk.eyJ1IjoiYW5hdG9taWNhbCIsImEiOiJja2x0MjBjc3Ywam0zMm9sZGlyNnY2OHB1In0.H73LoepKneV7RXuE5j69LA';
 var map = new mapboxgl.Map({
@@ -19,14 +20,16 @@ const html = document.documentElement;
 
 let aUtil = new Utils(map); // 构建帮助类
 let aLegend = new Legend(map); // 图例类
+let aChart = new Charts(html.getElementsByClassName("graph"));
+//console.log(html.getElementsByClassName("graph"));
 
 const scrollRange = [
-  0, 0.056, 0.1081, 
-  0.149 , 0.2135, 0.2789, 
-  0.32, 0.3843, 0.4491, 
-  0.492, 0.5551, 0.6191, 
-  0.66, 0.72435, 0.7896, 
-  0.84, 0.8955, 0.96, 
+  0, 0.043, 0.0815, 
+  0.1275 , 0.184, 0.2405, 
+  0.297, 0.3533, 0.4096, 
+  0.466, 0.522, 0.578, 
+  0.634, 0.6903, 0.7466, 
+  0.803, 0.872, 0.941, 
   1.01
 ];
 
@@ -48,9 +51,25 @@ const layerControl = [
       center: [-53.970708, 40.612189], 
       speed: 0.4
     }
-  }, {
+  }, 
+  // top10国家
+  {
+    layers:['studyAbroad_top10_line', 'studyAbroad_top10_polygon'],
+    label:'studyAbroad_top10_label', 
+    flySet: {
+      zoom:1.34,
+      center: [-205.498270, 40.224331], 
+      speed: 0.4
+    }
+  }, 
+  {
     layers:['UK-USA-totalStudent-point-19to20'],
-    label:'UK-USA-totalStudent-label-19to20'
+    label:'UK-USA-totalStudent-label-19to20', 
+    flySet: {
+      zoom:2.22,
+      center: [-53.970708, 40.612189], 
+      speed: 0.4
+    }
   }, 
   {
     layers:['UK-USA-totalStudent-point-ave'],
@@ -171,18 +190,28 @@ map.on('load', function() {
   document.addEventListener('scroll', (e) => {
 
     let scrolled = html.scrollTop / (sectionHeight - html.clientHeight);
-    //console.log(`scrolled: ${scrolled}`);
+    console.log(`scrolled: ${scrolled}`);
 
-    let curRegion = JudgeScrollRegion(scrolled, scrollRegion);
-    if(curRegion != scrollRegion) {
-      let activeLayers = ChapterChange(curRegion, activeLayerID, activeLabelID);
-      activeLayerID = activeLayers[0];
-      activeLabelID = activeLayers[1];
-      scrollRegion = curRegion;
+    if(scrolled <= 1) {
+      let curRegion = JudgeScrollRegion(scrolled, scrollRegion);
+      if(curRegion != scrollRegion) {
+        let activeLayers = ChapterChange(curRegion, activeLayerID, activeLabelID);
+        activeLayerID = activeLayers[0];
+        activeLabelID = activeLayers[1];
+        scrollRegion = curRegion;
+      }
+      if(scrollRegion == 1) {
+        aChart.SetProperChart(0);
+      }
+      else if(scrollRegion == 3) {
+        aChart.SetProperChart(1);
+      }
+      else if(scrollRegion > 3){
+        aChart.SetProperChart(Math.ceil(scrollRegion/3));
+      }
+
+      ChapterScroll(scrollRange[scrollRegion-1], scrollRange[scrollRegion], scrolled, activeLayerID, activeLabelID);
     }
-
-    ChapterScroll(scrollRange[scrollRegion-1], scrollRange[scrollRegion], scrolled, activeLayerID, activeLabelID);
-
   });
 });
 

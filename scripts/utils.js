@@ -11,6 +11,14 @@ export default class Utils { // 帮助类
         return (percent - start) / (end - start);
     }
       
+
+    GetLayerMaxOpacity(layerID) {
+        let layertype = this.map.getLayer(layerID).type;
+        let opacity = 0;
+        opacity = this.map.getPaintProperty(layerID, layertype+"-opacity");
+        return opacity;
+    }
+
     // 用于调节图层透明度
     SetLayerOpacity(layerID, opacity) {
         let layerType = this.map.getLayer(layerID).type;
