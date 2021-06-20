@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .UK-main{
     height: 100vh;
     
@@ -12,4 +13,20 @@
     position: relative;
     top: 10px;
 
+=======
+.UK-main{
+    height: 100vh;
+    
+}
+
+.USA-main{
+    height: 100vh;
+}
+
+.title{
+    text-align: center;
+    position: relative;
+    top: 10px;
+
+>>>>>>> a10a171e5149e90c8a0cc8a545bbbef66d719330
 }
