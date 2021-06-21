@@ -1,14 +1,9 @@
-div.apage {
-    width: 1485px;
-    height: 710px;
-}
-
 div#carousel { 
     perspective: 1200px; 
     background: #100000; 
     padding-top: 10%; 
     font-size:0; 
-    margin-bottom: 3rem; 
+    margin-bottom: 0px; 
     overflow: hidden; 
 }
 
@@ -47,3 +42,19 @@ div#carousel ~ span {
 }
 
 div#carousel ~ span:hover { color: #888; cursor: pointer; }
+
+.about {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100px;
+    background-color: #100000;
+    bottom: 300px;
+}
+
+.about-text {
+    float: right;
+    top: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgba(189, 247, 255, 0.8);
+}

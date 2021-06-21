@@ -2,10 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica;
+    height: auto;
 }
 
 .other-section {
-    background-color: rgba(34, 34, 34, 0.8);
+    background-color: #100000;
     height: 800px;
 }
 
